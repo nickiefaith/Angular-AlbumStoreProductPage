@@ -10,9 +10,12 @@ import { ProductDescriptionComponent } from './product-description/product-descr
 import { ProductTracklistingComponent } from './product-tracklisting/product-tracklisting.component';
 import { ProductListComponent } from './product-list/product-list.component';
 import { RouterModule, Routes  } from '@angular/router';
-import { constants } from 'os';
 
-
+const appRoutes: Routes=[
+  {path:'products', component: ProductListComponent },
+  {path:'products/id', component: ProductPageComponent },
+  {path: '',redirectTo = 'products',pathMatch:'full'}
+]
 
 @NgModule({
   declarations: [
@@ -21,7 +24,6 @@ import { constants } from 'os';
     ProductDescriptionComponent,
     ProductTracklistingComponent,
     ProductListComponent
-    
   ],
   imports: [
     BrowserModule,
